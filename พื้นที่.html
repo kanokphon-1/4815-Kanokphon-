@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .triArea{
+           width: 250px;
+           height: 300px;
+           border: 15px solid rgb(136, 177, 255);
+            border-radius: 5px;
+            background-color: rgb(246, 253, 145);
+            padding: 10px;
+            margin: auto;
+       }
+    </style>
+</head>
+<body style="background-color: rgb(180, 255, 180);">
+    <h1 style="text-align: right;">63070504815</h1>
+    <div class="triArea">
+    <h4>พท.รูปสามเหลี่ยม</h4>
+    <hr>ฐาน: <br>
+    <input type="text" name="" id="base" value="100">
+    <br> สูง: <br>
+    <input type="text" name="" id="height" value="100">
+    <br>
+    <p id="result"></p>
+    <script>
+        let b = document.getElementById("base");
+        let h = document.getElementById("height");
+        let area = document.getElementById("result");
+        b.addEventListener("input",triArea);
+        h.addEventListener("input",triArea);
+        function triArea() {
+            let base = parseFloat(b.value);
+            let height = parseFloat(h.value);
+            area.innerHTML = `พื้นที่รูปสามเหลี่ยมคือ ${(0.5*base*height).toFixed(2)}.`
+        }
+        
+    </script>
+    </div>
+    <br>
+  
+</body>
+</html>

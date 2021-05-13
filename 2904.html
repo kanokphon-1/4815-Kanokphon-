@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+    let weight = Number(prompt("Check BMI: Please enter your weight(kg)"));
+    let height = Number(prompt("Check BMI: Please enter your height(m)"));
+    let bmi = weight / height ** 2;
+    let msg = "";
+    if (bmi < 18.5) {
+        msg = "Under weight"
+    } else if (bmi < 25) {
+        msg = "Normal"
+    } else if (bmi < 30) {
+        msg = "Over weight"
+    } else msg = "Obese"
+    alert("BMI ="+bmi+" : "+msg)
+</script>

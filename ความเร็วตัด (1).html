@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+   
+    <!--ความเร็วตัดและความเร็วรอบ-->
+    <style>
+        
+        .ee {
+            width: 300px;
+            height: 450px;
+            border: 5px solid rgba(223, 15, 153, 0.726);
+            border-radius: 20px;
+            background-color: rgb(169, 223, 20);
+            padding: 15px;
+            margin: 20px;
+            padding-left: 40px;
+        }
+    </style>
+    <script>
+        function n() {
+            let d = parseFloat(document.getElementById("di").value);
+            let v = parseFloat(document.getElementById("v1").value);
+            let n = (v * 1000 ) /  (3.14 * d) ;
+            document.getElementById("n1").value = n.toFixed(4);
+            }
+
+        function v() {
+            let d = parseFloat(document.getElementById("di").value);
+            let n = parseFloat(document.getElementById("n1").value);
+            let v = (3.14 * d * n) / 1000 ;
+            document.getElementById("v1").value = v.toFixed(4);
+            }
+    </script>
+ 
+    <!--หาความเร็วฟีดและความเร็วรอบ-->
+    <style>
+        .bb {
+            width: 300px;
+            height:450px;
+            border: 5px solid rgb(140, 248, 16);
+            border-radius: 20px;
+            background-color: rgb(211, 116, 8);
+            padding: 15px;
+            margin: 20px;
+            padding-left: 40px;
+        }
+        .nn {
+            width: 300px;
+            height: 400px;
+            border: 5px solid black;
+            border-radius: 20px;
+            background-color: paleturquoise;
+            padding: 15px;
+            margin: 20px;
+            padding-left: 40px;
+        }
+    </style>
+    
+    <script>
+        function nfeed() {
+            let Fz = parseFloat(document.getElementById("fpt").value);
+            let z = parseFloat(document.getElementById("tooth").value);
+            let vfeed = parseFloat(document.getElementById("v2").value);
+            let nfeed = vfeed / (Fz * z) ;
+            document.getElementById("n2").value = nfeed.toFixed(4);
+            }
+        function vfeed() {
+            let Fz = parseFloat(document.getElementById("fpt").value);
+            let z = parseFloat(document.getElementById("tooth").value);
+            let nfeed = parseFloat(document.getElementById("n2").value);
+            let vfeed = Fz * z * nfeed ;
+            document.getElementById("v2").value = vfeed.toFixed(4);
+            }
+        
+    </script>
+    
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+    
+
+</head>
+<body style="background-color: rgb(54, 64, 204);">
+
+    <div class="container">
+    <!--หาความเร็วตัดและความเร็วรอบ-->
+    <div class="ee">
+    
+        <h4 style="text-align: center;">การหาความเร็วตัดและความเร็วรอบ</h4>
+    
+        <label for="">เส้นผ่านศูนย์กลางของชิ้นงาน ( d )</label><br><br>
+        <input type="text" name="" id="di" size="10">
+        <h>มิลลิเมตร</h><br><br>
+    
+        <label for="">ความเร็วรอบ ( n )</label><br><br>
+        <input type="text" name="" id="n1" size="10">
+        <button onclick="n()">Enter</button>
+        <h>รอบ/นาที</h><br><br>
+    
+        <label for="">ความเร็วตัด ( v )</label><br><br>
+        <input type="text" name="" id="v1" size="10 ">
+        <button onclick="v()">Enter</button>
+        <h>เมตร/นาที</h><br><br>
+    
+        <br><img  src="gg.jpg" width="150" height="70">
+
+    </div>
+    
+    <!--หาความเร็วฟีดและความเร็วรอบ-->
+    <div class="bb">
+
+        <h4 style="text-align: center;">การหาความเร็วฟีดและความเร็วรอบ</h4>
+    
+        <label for="">Feed per tooth  ( Fz )</label><br><br>
+        <input type="text" name="" id="fpt" size="10">
+        <h>มิลลิเมตร/ฟัน</h><br><br>
+
+        <label for="">จำนวนฟัน  ( z )</label><br><br>
+        <input type="text" name="" id="tooth" size="10">
+        <h>ฟัน</h><br><br>
+    
+        <label for="">ความเร็วรอบ ( n )</label><br><br>
+        <input type="text" name="" id="n2" size="10">
+        <button onclick="nfeed()">Enter</button>
+        <h>รอบ/นาที</h><br><br>
+    
+        <label for="">ความเร็วฟีด ( Vf )</label><br><br>
+        <input type="text" name="" id="v2" size="10 ">
+        <button onclick="vfeed()">Enter</button>
+        <h>มิลลิเมตร/นาที</h><br><br>
+       
+        <img  src="zz.jpg" width="150" height="70">
+    
+    </div>
+    
+    <div class="nn">
+        <h2><b>ความหมายตัวแปร</b></h2>
+        <h3>V=ความเร็วตัด(เมตร/นาที)</h3>
+        <h3>N=ความเร็บรอบ(รอบ/นาที)</h3>
+        <h3>π=3.14</h3>
+        <h3>D=ขนาดเส้นผ่านศูนย์กลางของชิ้นงาน,ดอกกัด,ดอกสว่าน(มิลลิเมตร)</h3>
+        <h3>Z=จำนวนฟันของดอกกัด(ฟัน)</h3>
+        <h3>vf=ความเร็วฟีด(มิลลิเมตร/นาที)</h3>
+        <h3>fz=Feed per Tooth(มิลลิเมตร/ฟัน)</h3>
+
+    </div>
+
+    </div>
+</body>
+</html>
